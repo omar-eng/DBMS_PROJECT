@@ -18,4 +18,5 @@ list_tables(){
     fi
     echo "[Press any key to continue...]"
     read ; clear
+    table_menu "$DATABASE_NAME"
 }

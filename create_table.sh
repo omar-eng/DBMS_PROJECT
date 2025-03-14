@@ -45,5 +45,6 @@ create_table(){
     echo "**********************************************"
 
     read -p "[Press enter to continue...]"
+    table_menu "$DATABASE_NAME"
 }
 
