@@ -5,6 +5,7 @@ source "./listdb.sh"
 source "./connectdb.sh"
 source "./dropdb.sh"
 source "./tablemenu.sh"
+clear
 echo "                                            Welcome $USER"
 
 options=("create database" "list database" "connect database" "drop database" "exit")
