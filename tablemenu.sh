@@ -6,6 +6,9 @@
 source ./common.sh
 source ./create_table.sh
 source ./list_tables.sh
+source ./drop_table.sh
+source ./insert_into_table.sh
+source ./delete_from_table.sh
 
 function table_menu {
 
