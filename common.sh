@@ -60,13 +60,13 @@ add_column() {
         return 2
     fi
 
-    if [[ "$DATA_TYPE" == "INT" ]]; then 
+    if [[ "$DATA_TYPE" == "1" ]]; then 
         DATA_TYPE=int
     else
         DATA_TYPE=str
     fi
     
-    if [[ "$CONSTRAIN" == "PRIMARY_KEY" ]]; then
+    if [[ "$CONSTRAIN" == "1" ]]; then
         echo "${COLUMN_NAME}:${DATA_TYPE}:PK" >> "$META_DATA_FILE_PREFIX${TABLE_NAME}${DB_FILE_EXTENSION}"
     else
         echo "${COLUMN_NAME}:${DATA_TYPE}:" >> "$META_DATA_FILE_PREFIX${TABLE_NAME}${DB_FILE_EXTENSION}"
