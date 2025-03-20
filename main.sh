@@ -35,7 +35,9 @@ options=("create database" "list database" "connect database" "drop database" "e
                     ;;
                 *)
                 echo "invalid option '$REPLY'.exiting..."
-                    
+                read -p "[Press enter to continue...]"
+                
+                    ./main.sh
                     break
                     ;;
             esac

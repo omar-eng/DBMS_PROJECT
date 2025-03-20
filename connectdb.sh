@@ -1,5 +1,3 @@
-#! /bin/bash
-
 function connect_database {
     clear
 
@@ -17,20 +15,29 @@ function connect_database {
     ls -1 "./Databases"
     echo "**********************************************"
 
-    read -p "enter database name: " dbName
+    while true; do
+        read -p "enter database name: " dbName
 
-    if [ -d "./Databases/$dbName" ]; then
-        cd "./Databases/$dbName"
-        echo "**********************************************"
-        echo "connected to $dbName database"
-        echo "**********************************************"
-        clear
-        table_menu "$dbName"
-    else
-        echo "-------------------------------"
-        echo "database $dbName does not exist"
-        echo "-------------------------------"
-         read -p "press enter to go back to manu..." dummy
-        ./main.sh 
-    fi
+        if [[ -z "$dbName" ]]; then
+            echo "Database name cannot be empty. Please enter a valid name."
+            continue
+        fi
+
+        if [ -d "./Databases/$dbName" ]; then
+            cd "./Databases/$dbName"
+            echo "**********************************************"
+            echo "connected to $dbName database"
+            echo "**********************************************"
+            clear
+            table_menu "$dbName"
+            return
+        else
+            echo "-------------------------------"
+            echo "database $dbName does not exist"
+            echo "-------------------------------"
+            read -p "press enter to go back to menu..." dummy
+            ./main.sh
+            return
+        fi
+    done
 }
