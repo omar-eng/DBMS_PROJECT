@@ -23,7 +23,7 @@ create_table(){
     while [[ $COLUMN_NUM -lt $NUMBER_OF_COLUMNS ]]; do
         echo "Column [$(($COLUMN_NUM + 1))]: "
         read -p "Enter column name: " COLUMN_NAME
-        read -p "Enter column data type (INT, STRING): " COLUMN_DATATYPE
+        read -p "Enter column data type (1 for INT, 0 or empty for STRING): " COLUMN_DATATYPE
         read -p "Enter column constraint (1 for PRIMARY_KEY, else 0 or empty): " COLUMN_CONSTRAIN
         add_column "$TABLE_NAME" "$COLUMN_NAME" "$COLUMN_DATATYPE" "$COLUMN_CONSTRAIN"
         case $? in

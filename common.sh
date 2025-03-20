@@ -60,7 +60,7 @@ add_column() {
         return 2
     fi
 
-    if [[ "$DATA_TYPE" == "INT" ]]; then 
+    if [[ "$DATA_TYPE" == "1" ]]; then 
         DATA_TYPE=int
     else
         DATA_TYPE=str
